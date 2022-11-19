@@ -1,8 +1,13 @@
-#clock{
-    font-size: 175px;
-    width: 900px;
-    margin: 200px;
+
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 70px;
     text-align: center;
-    border: 2px solid black;
-    border-radius: 20px;
+    position: relative;
+    top: 300px;
+    background-color: black;
+    color: beige;
+    border-radius: 40px;
+    border-style: dotted;
 }

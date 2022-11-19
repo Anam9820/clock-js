@@ -1,29 +1,23 @@
-setInterval(showtime, 1000) ;
-function showTime() {
-    let time = new Date();
-    let hour = time.getHours();
-    let min = time.getMinutes();
-    let seconds = time.getSeconds();
-    am_pm = "AM";
+function displayTime(){
+    var dateTime = new Date();
+    var hrs = dateTime.getHours();
+    var minutes = dateTime.getMinutes();
+    var seconds = dateTime.getSeconds();
+    var session = document.getElementById('session');
 
-    if (hour > 12) {
-        hour -= 12;
-        am_pm = "PM"
+    if(hrs >= 12){
+        session.innerHTML = 'PM';
+    }else{
+        session.innerHTML = 'AM';
     }
-     
-    if (hour == 0) {
-        hr = 12;
-        am_pm = "AM";
+
+    if(hrs > 12){
+        hrs = hrs - 12;
     }
-    hour = hour < 10 ? "0" + hour : hour;
-    min = min < 10 ? "0" + min : min;
-    sec = sec < 10 ? "0" + sec : sec;
-
-    let currentTime = hour + ":"
-            +   min + ";" + sec + am_pm;
-
-    document.getElementById("clock")
-            .innerHTML = currentTime;
     
+    document.getElementById('hours').innerHTML = hrs;
+    document.getElementById('minutes').innerHTML = min;
+    document.getElementById('seconds').innerHTML = sec;
+
 }
-showTimw();
+setInterval(displayTime, 10);
